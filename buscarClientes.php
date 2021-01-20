@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "php";
-$password = "1234";
+$password = "1234ajv";
 $dbname = "prueba";
 
 // Create connection
@@ -15,11 +15,8 @@ if (!$conn) {
 $filtro = $_POST["filtro"];
 $busqueda = $_POST["buscar"];
 
-if ($filtro == "apellidos") {
-    $sql = "SELECT nombre, apellidos, dni, email, fecha_nac FROM clientes where ".$filtro." like '%".$busqueda."%';";
-}else {
-    $sql = "SELECT nombre, apellidos, dni, email, fecha_nac FROM clientes where ".$filtro." = ".$busqueda.";";
-    }
+$sql = "SELECT nombre, apellidos, dni, email, fecha_nac FROM clientes where ".$filtro." like '%".$busqueda."%';";
+
 $result = mysqli_query($conn, $sql);
  // busqueda en si
 echo "<table border='1'>
@@ -37,7 +34,8 @@ if (mysqli_num_rows($result) > 0) {
         . "<td>" . $registro["nombre"]. "</td>"
         . "<td>". $registro["apellidos"]."</td>"
         ."<td>".$registro["dni"]. "</td>"
-        ."<td>".$registro["email"]. "</td>"        
+        ."<td>".$registro["email"]. "</td>"
+        ."<td>".$registro["fecha_nac"]. "</td>"
 . "</tr>";
     }
 } else {

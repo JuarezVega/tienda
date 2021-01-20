@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "php";
-$password = "1234";
-$dbname = "pruebas";
+$password = "1234ajv";
+$dbname = "prueba";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -14,10 +14,9 @@ $nombre=$_POST["nombre"];
 $apellido=$_POST["apellidos"];
 $dni=$_POST["dni"];
 $email=$_POST["email"];
-$fecha=$_POST["fecha"];
+$fecha=$_POST["fecha_nac"];
 
-$sql = "INSERT INTO clientes(nombre, apellidos, dni, email, fecha_nac)
-VALUES ('$nombre', '$apellido', '$dni', '$email', '$fecha')";
+$sql = "INSERT INTO clientes(nombre, apellidos, dni, email, fecha_nac) VALUES ('$nombre', '$apellido', '$dni', '$email', '$fecha');";
 
 $resultado = mysqli_query($conn, $sql);
 
