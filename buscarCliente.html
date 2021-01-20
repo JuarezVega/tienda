@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Buscar producto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Tienda WEB v2.0</h1>
+        <h2>Buscar cliente</h2>
+        <form action="buscarCliente.php" method="post">
+            <div><label>Buscar producto:</label><input type="text" id="buscar" name="buscar"/></div>
+            <div>
+                <label>Buscar por:</label>
+                <select name="filtro">
+                    <option value="nombre">Por nombre</option>
+                    <option value="apellidos">Por apellidos</option>
+                    <option value="dni">Por DNI</option>
+                    <option value="email">Por Email</option>
+                </select>
+            </div>
+            <div><input type="submit" value="Enviar"></div>
+        </form>
+    </body>
+</html>
