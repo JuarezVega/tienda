@@ -1,0 +1,12 @@
+index.html:
+	Este archivo es el encargado de generar una lista con los otros html.
+
+buscar.html:
+	Formulario para la busqueda de productos mediante un desplegable con las opciones de
+  codigo, descripcion, precio.
+
+buscarCliente.html: 
+	Formulario para la busqueda de clientes mediante un desplegable con las opciones de
+  nombre, apellidos, dni, email.
+
+
