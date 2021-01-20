@@ -38,6 +38,7 @@ if (mysqli_num_rows($result) > 0) {
         . "<td>". $registro["apellidos"]."</td>"
         ."<td>".$registro["dni"]. "</td>"
         ."<td>".$registro["email"]. "</td>"        
+        ."<td>".$registro["fecha_nac"]. "</td>"
 . "</tr>";
     }
 } else {
