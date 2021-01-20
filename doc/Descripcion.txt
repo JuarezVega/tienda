@@ -1,12 +1,43 @@
 index.html:
-	Este archivo es el encargado de generar una lista con los otros html.
+	Este archivo es el encargado de generar una lista con los redireccionamientos a los otros html.
 
 buscar.html:
 	Formulario para la busqueda de productos mediante un desplegable con las opciones de
-  codigo, descripcion, precio.
+	codigo, descripcion, precio.
+
+buscar.php:
+	Fichero encargado de hacer la consulta en la base de datos, en la tabla productos y 
+	mostrarlo por pantalla
+
+
 
 buscarCliente.html: 
 	Formulario para la busqueda de clientes mediante un desplegable con las opciones de
-  nombre, apellidos, dni, email.
+	nombre, apellidos, dni, email y fecha_nac.
+
+buscarCliente.php:
+	Fichero encargado de hacer la consulta en la base de datos, en la tabla  y
+	mostrarlo por pantalla.
+
+
+
+insertar.html:
+	Formulario encargado de recoger los datos de los productos como codigo, descripcion,
+	precio.
+
+insertar.php:
+	Fichero que recogera los datos de los productos recibidos en el insertar.html y los escribira
+	en la tabla productos de la base de datos prueba.
+
+
+
+insertarClientes.html:
+	Formulario encargado de recoger los datos de los clientes como nombre, apellidos, dni,
+	 email y fecha de nacimiento.
+
+insertarClientes.php:
+	Fichero que recogera los datos de los clientes de insertarCliente.html y los escribira en la
+	tabla clientes de la base de datos prueba.
+	
 
 
