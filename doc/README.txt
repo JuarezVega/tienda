@@ -1,4 +1,15 @@
+
 Para este trabajo hemos realizado una video conferencia para repartirnos las tareas donde:
+
+Version 3.0
+Alejandro Juarez Vega Creación de los archivos: buscarProductos.html y buscarProductos.php
+Angel Gallardo Olmos Creación de los archivos: insertarClientes.html y insertarClientes.php
+Ivan Aguilar Martin Creación de los archivos: buscarClientes.html y buscarClientes.php
+Diego Carrasco Corral Creación de los archivos: insertarProductos.html y insertarProductos.php
+Para la creación de las clases: claseCliente.php y claseProducto.php se ha realizado entre todos.
+Resto de modificaciones entre todos.
+
+Version 2.0
 Alejandro Juarez Vega Creador de la cuenta principal de github. Creacion de buscarCliente.html.
 Angel Gallardo Olmos Creacion de insertarClientes.php.
 Diego Carrasco Corral Creacion de buscarClientes.php.
