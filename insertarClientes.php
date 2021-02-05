@@ -1,31 +1,32 @@
 <?php
+//Import PHPMailer classes into the global namespace
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+require 'vendor/autoload.php';
+require 'claseCliente.php';
+
 $servername = "localhost";
 $username = "php";
-$password = "1234ajv";
+$password = "1234";
 $dbname = "prueba";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-die("Connection failed: " . mysqli_connect_error());
-}
 $nombre=$_POST["nombre"];
 $apellido=$_POST["apellidos"];
 $dni=$_POST["dni"];
 $email=$_POST["email"];
 $fecha=$_POST["fecha_nac"];
 
-$sql = "INSERT INTO clientes(nombre, apellidos, dni, email, fecha_nac) VALUES ('$nombre', '$apellido', '$dni', '$email', '$fecha');";
 
-$resultado = mysqli_query($conn, $sql);
-
-if ($resultado) {
-echo "Cliente insertado correctamente";
-} else {
-echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+// Creamos la conexion
+$conn = new mysqli($servername, $username, $password, $dbname);
+// probamos la conexion
+if ($conn->connect_error) {
+die("No se ha conectado: " . $conn->connect_error);
 }
 
-mysqli_close($conn);
+$clientenuevo = new cliente($nombre,$apellido,$dni,$email,$fecha);
+$clientenuevo->darAlta($conn);
+
+$conn->close($conn);
 ?>
 
