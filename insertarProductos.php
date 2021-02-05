@@ -14,7 +14,7 @@ $precio = $_POST["precio"];
 
 //comprobamos la conexion
 if (!$conn) {
-    die("Conexion fallida: " . mysqli_connect_error());
+    die("Conexion fallida: " . $conn->connect_error);
 }
 
 //realizamos la consulta
@@ -25,5 +25,5 @@ if (mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-mysqli_close($conn);
+$conn->close();
 ?>
