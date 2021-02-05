@@ -14,7 +14,7 @@ class producto {
         $this->stock = $stock;
     }
     
-    function darAlta(){
+    function darAlta($conn){
         $sql = "insert into productos (cod, descripcion, precio, stock) values (".$this->cod.",'".$this->descripcion."',".$this->precio.",".$this->stock.");";
         if ($conn->query($sql) == true){
             echo "Nuevo producto creado";
