@@ -1,3 +1,12 @@
+
+claseCliente.php:
+        Este archivo contiene la clase para la creacioón de los objetos clientes con los procedimientos: darAlta y Buscar.
+        Dentro de Buscar también se realiza la función de envío del correo.
+
+
+claseProducto.php:
+        Este archivo contiene la clase para la creacioón de los objetos productos con los procedimientos: darAlta y Buscar.
+
 index.html:
 	Este archivo es el encargado de generar una lista con los redireccionamientos a los otros html.
 
