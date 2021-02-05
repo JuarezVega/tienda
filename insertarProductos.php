@@ -4,26 +4,25 @@ $username = "php";
 $password = "1234";
 $dbname = "prueba";
 
+require 'claseProducto.php';
+
 // Creamos la conexion
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Creamos las variables de entrada del formulario
 $cod = $_POST["cod"];
 $descripcion = $_POST["descripcion"];
 $precio = $_POST["precio"];
+$stock = $_POST["stock"];
 
 //comprobamos la conexion
-if (!$conn) {
+if ($conn->connect_error) {
     die("Conexion fallida: " . $conn->connect_error);
 }
 
 //realizamos la consulta
-$sql = "insert into productos values ('".$cod."', '".$descripcion."', ".$precio.");";
-if (mysqli_query($conn, $sql)) {
-    echo "Producto nuevo añadido";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+$productoNuevo = new producto($cod, $descripcion, $precio, $stock);
+$productoNuevo->darAlta($conn);
 
-$conn->close();
+$conn->close($conn);
 ?>
