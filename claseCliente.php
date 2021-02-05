@@ -8,7 +8,7 @@ class cliente {
     private $fecha_nac;
     
     //comportamiento
-    function __construct() {
+    function __construct($nombre,$apellidos,$dni,$email,$fecha_nac) {
         $this->nombre = $nombre;
         $this->apellidos = $apellidos;
         $this->dni = $dni;
@@ -16,8 +16,8 @@ class cliente {
         $this->fecha_nac = $fecha_nac;
     }
     
-    function darAlta($nombre,$apellidos,$dni,$email,$fecha_nac,$conn){
-        $sql = "insert into clientes (nombre,apellidos,dni,email,fecha_nac) values ('$nombre','$apellidos','$dni','$email','$fecha_nac');";
+    function darAlta($conn){
+        $sql = "insert into clientes (nombre,apellidos,dni,email,fecha_nac) values ('".$this->nombre."','".$this->apellidos."','".$this->dni."','".$this->email."','".$this->fecha_nac."');";
         if ($conn->query($sql) == true){
             echo "Nueva entrada creada";
             $miEmail = new envioEmail($email);
