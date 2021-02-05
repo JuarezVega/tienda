@@ -7,15 +7,15 @@ class producto {
     private $stock;
     
     //comportamiento
-    function __construct() {
+    function __construct($cod,$descripcion,$precio,$stock) {
         $this->cod = $cod;
         $this->descripcion = $descripcion;
         $this->precio = $precio;
         $this->stock = $stock;
     }
     
-    function darAlta($cod,$descripcion,$precio,$stock,$conn){
-        $sql = "insert into productos (cod, descripcion, precio, stock) values ($cod,'$descripcion',$precio,$stock);";
+    function darAlta($conn){
+        $sql = "insert into productos (cod, descripcion, precio, stock) values (".$this->cod.",'".$this->descripcion."',".$this->precio,$stock.");";
         if ($conn->query($sql) == true){
             echo "Nuevo producto creado";
         } else {
