@@ -1,4 +1,8 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+require 'vendor/autoload.php';
 class cliente {
     //estado
     private $nombre;
@@ -20,8 +24,40 @@ class cliente {
         $sql = "insert into clientes (nombre,apellidos,dni,email,fecha_nac) values ('".$this->nombre."','".$this->apellidos."','".$this->dni."','".$this->email."','".$this->fecha_nac."');";
         if ($conn->query($sql) == true){
             echo "Nueva entrada creada";
-            $miEmail = new envioEmail($email);
-            $miEmail->sendMail();
+            // Instantiation and passing `true` enables exceptions
+            $mail = new PHPMailer(true);
+
+            try {
+                //Server settings
+                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+                $mail->isSMTP();                                            // Send using SMTP
+                $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+                $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+                $mail->Username   = 'tiendaasir960@gmail.com';                     // SMTP username
+                $mail->Password   = 'frodobolson';                               // SMTP password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+                //Recipients
+                $mail->setFrom('from@example.com', 'Mailer');
+                $mail->addAddress("$this->email");     // Add a recipient
+                $mail->addReplyTo('tiendaasir960@gmail.com', 'Information');
+                $mail->addCC('tiendaasir960@gmail.com');
+                $mail->addBCC('tiendaasir960@gmail.com');
+
+                // Attachments
+                //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+                //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+                // Content
+                $mail->isHTML(true);                                  // Set email format to HTML
+                $mail->Subject = 'Registro tienda web';
+                $mail->Body    = 'Gracias por confiar en nosotros';
+                $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+                $mail->send();
+                echo 'Mensaje enviado';
+            } catch (Exception $e) {
+                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            }
         } else {
             echo "Error: ".$sql." ".$conn->error;
         }
@@ -92,19 +128,19 @@ class envioEmail {
         $mail->SMTPAuth = true;
 
         //Usuario que se logea en gmail - hay que usar la misma dirección de email completa
-        $mail->Username = 'username@gmail.com';
+        $mail->Username = 'tiendaasir690@gmail.com';
 
         //Contraseña de gmail para la SMTP authentication
-        $mail->Password = 'yourpassword';
+        $mail->Password = 'frodobolson';
 
         //Asignar el 'desde'
-        $mail->setFrom('from@example.com', 'First Last');
+        $mail->setFrom('tiendaasir690@gmail.com', 'First Last');
 
         // reply-to address
         $mail->addReplyTo('replyto@example.com', 'First Last');
 
         //Dirección de envío
-        $mail->addAddress('whoto@example.com', 'John Doe');
+        $mail->addAddress($this->mail, 'John Doe');
 
         //Ponemos el asunto
         $mail->Subject = 'PHPMailer GMail SMTP test';
