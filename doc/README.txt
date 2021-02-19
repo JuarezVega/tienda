@@ -2,11 +2,14 @@
 Para este trabajo hemos realizado una video conferencia para repartirnos las tareas donde:
 
 Version 3.0
-Alejandro Juarez Vega Creación de los archivos: buscarProductos.html y buscarProductos.php
-Angel Gallardo Olmos Creación de los archivos: insertarClientes.html y insertarClientes.php
-Ivan Aguilar Martin Creación de los archivos: buscarClientes.html y buscarClientes.php
-Diego Carrasco Corral Creación de los archivos: insertarProductos.html y insertarProductos.php
-Para la creación de las clases: claseCliente.php y claseProducto.php se ha realizado entre todos.
+-Alejandro Juarez Vega Creación de los archivos: buscarProductos.html y buscarProductos.php
+-Angel Gallardo Olmos Creación de los archivos: insertarClientes.html y insertarClientes.php
+-Ivan Aguilar Martin Creación de los archivos: buscarClientes.html y buscarClientes.php, Realizacion 
+de la modificacion pero no pudo subirlo el dia por motivos familiares lo que paso los archivos 
+por discord a Alejandro  Juarez que este los comprobo junto al resto del equipo y subio esta parte de 
+los archivos a git.
+-Diego Carrasco Corral Creación de los archivos: insertarProductos.html y insertarProductos.php
+-Para la creación de las clases: claseCliente.php y claseProducto.php se ha realizado entre todos.
 Resto de modificaciones entre todos.
 
 Version 2.0
