@@ -56,6 +56,15 @@ class productoTest extends \PHPUnit\Framework\TestCase
 
 
         $this->assertEquals($productoAntes + 1, $productoDespues, "El producto se da de alta correctamente");
+        
+         //Segunda tanda
+        $sqlPrueba = "select * from productos where cod = 69;";
+        $resultado = $conn->query($sqlPrueba);
+
+        // Consulta para realizar la busqueda en la base de datos
+        $numeroFilas = $resultado->num_rows;
+
+        $this->assertEquals(1, $numeroFilas, "El producto se da de alta correctamente, 2a prueba, y no se repiten filas");
 
 	$conn->close();
     }
