@@ -13,7 +13,7 @@
  */
 
 require 'vendor/autoload.php';
-require 'claseCliente.php';
+require 'claseProducto.php';
 
 class productoTest extends \PHPUnit\Framework\TestCase
 {
@@ -42,19 +42,21 @@ class productoTest extends \PHPUnit\Framework\TestCase
         $resultado = $conn->query($sqlPrueba);
 
         // Consulta para realizar la busqueda en la base de datos
-        $clientesAntes = $resultado->num_rows;
+        $productoAntes = $resultado->num_rows;
 
 
-        $clienteNuevo = new producto(69, "prueba", 69, 69);
+        $productoNuevo = new producto(69, "prueba", 69, 69);
 
-        $clienteNuevo->darAlta($conn);
+        $productoNuevo->darAlta($conn);
 
         $resultado = $conn->query($sqlPrueba);
 
         // Consulta para realizar la busqueda en la base de datos
-        $clientesDespues = $resultado->num_rows;
+        $productoDespues = $resultado->num_rows;
 
 
-        $this->assertEquals($clientesAntes + 1, $clientesDespues, "El producto se da de alta correctamente");
+        $this->assertEquals($productoAntes + 1, $productoDespues, "El producto se da de alta correctamente");
 
+	$conn->close();
     }
+}
