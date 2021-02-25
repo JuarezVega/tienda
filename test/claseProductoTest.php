@@ -45,7 +45,7 @@ class productoTest extends \PHPUnit\Framework\TestCase
         $productoAntes = $resultado->num_rows;
 
 
-        $productoNuevo = new producto(69, "prueba", 69, 69);
+        $productoNuevo = new producto("69", "prueba", "69", "69");
 
         $productoNuevo->darAlta($conn);
 
