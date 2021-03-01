@@ -55,7 +55,7 @@ class productoTest extends \PHPUnit\Framework\TestCase
         $productoDespues = $resultado->num_rows;
 
 
-        $this->assertEquals($productoAntes + 1, $productoDespues, "El producto se da de alta correctamente");
+        $this->assertEquals($productoAntes + 1, $productoDespues, "El producto no se da de alta correctamente");
         
          //Segunda tanda
         $sqlPrueba = "select * from productos where cod = 69;";
@@ -64,8 +64,44 @@ class productoTest extends \PHPUnit\Framework\TestCase
         // Consulta para realizar la busqueda en la base de datos
         $numeroFilas = $resultado->num_rows;
 
-        $this->assertEquals(1, $numeroFilas, "El producto se da de alta correctamente, 2a prueba, y no se repiten filas");
+        $this->assertEquals(1, $numeroFilas, "El producto no se da de alta correctamente, 2a prueba, y no se repiten filas");
 
 	$conn->close();
     }
+
+	public function testBuscarCliente()
+	{
+	$servername = "localhost";
+	$username = "php";
+	$password = "1234";
+	$dbname = "prueba";
+
+	// Establecer conexión con la base de datos
+	$con = new mysqli($servername, $username, $password, $dbname);
+
+	// Verificar la conexión
+	if ($conn->connect_error) {
+		die ("Error de conexion: " . $conn->connect_error);
+	}
+
+	//Creo un objeto cliente y le pongo valores al azar como en el codigo real
+
+	$buscador = new Cliente("1","1","1","1","1");
+
+	//lanzo una peticion cliente->buscar("nombre","ale",$conn) que tiene que ser resultado == 1
+	$resultado = $buscador->buscar("nombre","ale",$conn);
+
+	$this->assertEquals(2,$resultado,"No se ha podido localizar el usuario ale");
+
+
+
+
+
+
+	$conn->close();
+	}
+
+
 }
+?>
+
