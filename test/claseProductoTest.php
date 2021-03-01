@@ -101,6 +101,35 @@ class productoTest extends \PHPUnit\Framework\TestCase
 	$conn->close();
 	}
 
+public function testBuscarProductoPrecio()
+    {
+
+        $servername = "localhost";
+        $username = "php";
+        $password = "1234";
+        $dbname = "prueba";
+
+        // Establecer conexión con la base de datos
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Verificar la conexión
+        if ($conn->connect_error) {
+            die("Error de conexión: " . $conn->connect_error);
+        }
+
+
+        $buscador = new producto("1","1","1","1");
+
+        //segunda tanda
+        //lanzo una peticion producto->buscar("precio","1",$conn) que tiene que ser resultado == 1
+        $resultado = $buscador->buscar("precio","1",$conn);
+        $this->assertEquals(null,$resultado,"Hemos buscado productos con precio 1 y no hay.");
+
+
+        $conn->close();
+
+    }
+
 
 }
 ?>
