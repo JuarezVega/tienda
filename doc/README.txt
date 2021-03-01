@@ -1,6 +1,15 @@
 
 Para este trabajo hemos realizado una video conferencia para repartirnos las tareas donde:
 
+-Version (3.0-3.5)
+-Alejandro Juarez Vega y Angel Gallardo Olmos creación de la funcion de la claseProductoTest.php 
+testDarAlta cada uno ha definido un assert.
+-Ivan Aguilar Martin creacion de la funcion de la claseProductoTest.php testBuscarProducto.
+-Diego Carrasco Corral creacion de la funcion de la claseProductoTest.php testBuscarProductoPrecio.
+-Creacion de la funcion testBuscarClienteDNI de la claseClienteTest realizada por todos los miembros.
+Javier Villares Acebedo No ha realizado ninguna aportacion.
+
+
 Version 3.0
 -Alejandro Juarez Vega Creación de los archivos: buscarProductos.html y buscarProductos.php
 -Angel Gallardo Olmos Creación de los archivos: insertarClientes.html y insertarClientes.php

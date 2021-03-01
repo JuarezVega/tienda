@@ -49,4 +49,11 @@ insertarClientes.php:
 	tabla clientes de la base de datos prueba.
 	
 
+ClaseClienteTest.php
+	Fichero con los assert para las comprobaciones de los clientes para las funciones buscar y darAlta.
+
+ClaseProductosTest.php
+	Fichero con los assert para las comprobaciones de los productos para las funciones buscar y darAlta
+
+Previamente hemos realizado la instalacion de phpmailer y phpunit en una rama llamada phpunit.
 
