@@ -103,4 +103,36 @@ class ClienteTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(2,$resultado,"Hemos buscado a Pedro y no estaba???");
 
     }
+ public function testBuscarClienteDNI()
+    {
+
+        $servername = "localhost";
+        $username = "php";
+        $password = "1234";
+        $dbname = "prueba";
+
+        // Establecer conexión con la base de datos
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Verificar la conexión
+        if ($conn->connect_error) {
+            die("Error de conexión: " . $conn->connect_error);
+        }
+
+        //primero inserto 5 filas en la tabla
+
+        //creo un objeto Cliente, y le pongo valores al azar como en el código real
+
+
+        $buscador = new Cliente("1","1","1","1","1");
+
+
+
+        //lanzo una peticion cliente->buscar("dni","prueba",$conn) que tiene que ser resultado == 1
+        $resultado = $buscador->buscar("dni","prueba",$conn);
+
+        $this->assertEquals(2,$resultado,"Hemos buscado a cliente con dni prueba y no estaba???");
+
+    }
+
 }
