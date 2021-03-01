@@ -69,7 +69,7 @@ class productoTest extends \PHPUnit\Framework\TestCase
 	$conn->close();
     }
 
-	public function testBuscarCliente()
+	public function testBuscarProducto()
 	{
 	$servername = "localhost";
 	$username = "php";
@@ -86,12 +86,12 @@ class productoTest extends \PHPUnit\Framework\TestCase
 
 	//Creo un objeto cliente y le pongo valores al azar como en el codigo real
 
-	$buscador = new Cliente("1","1","1","1","1");
+	$buscador = new producto("1","1","1","1");
 
-	//lanzo una peticion cliente->buscar("nombre","ale",$conn) que tiene que ser resultado == 1
-	$resultado = $buscador->buscar("nombre","ale",$conn);
+	//lanzo una peticion producto->buscar("cod","70",$conn) que tiene que ser resultado == 1
+	$resultado = $buscador->buscar("cod","70",$conn);
 
-	$this->assertEquals(2,$resultado,"No se ha podido localizar el usuario ale");
+	$this->assertEquals(2,$resultado,"No se ha podido localizar el producto con codigo 70");
 
 
 
