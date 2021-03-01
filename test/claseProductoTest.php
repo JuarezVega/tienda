@@ -84,7 +84,7 @@ class productoTest extends \PHPUnit\Framework\TestCase
 		die ("Error de conexion: " . $conn->connect_error);
 	}
 
-	//Creo un objeto cliente y le pongo valores al azar como en el codigo real
+	//Creo un objeto producto y le pongo valores al azar como en el codigo real
 
 	$buscador = new producto("1","1","1","1");
 
