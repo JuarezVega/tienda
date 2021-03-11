@@ -11,17 +11,16 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Tienda WEB v2.0</h1>
-        <h2>Buscar cliente</h2>
-        <form action="buscarCliente.php" method="post">
+        <h1>Tienda WEB v1.0</h1>
+        <h2>Buscar Producto</h2>
+        <form action="busquedaProductos.php" method="post">
             <div><label>Buscar producto:</label><input type="text" id="buscar" name="buscar"/></div>
             <div>
                 <label>Buscar por:</label>
                 <select name="filtro">
-                    <option value="nombre">Por nombre</option>
-                    <option value="apellidos">Por apellidos</option>
-                    <option value="dni">Por DNI</option>
-                    <option value="email">Por Email</option>
+                    <option>cod</option>
+                    <option>descripcion</option>
+                    <option>precio</option>
                 </select>
             </div>
             <div><input type="submit" value="Enviar"></div>
